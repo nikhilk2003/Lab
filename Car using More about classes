@@ -1,0 +1,30 @@
+package MoreAboutClasses;
+
+public class Calculator {
+	int add(int x,int y)
+	{
+		return x+y;
+	}
+	int add(int x,int y,int z)
+	{
+		return x+y+z;
+	}
+	double add(double x,double y)
+	{
+		return x+y;
+	}
+	
+	public static void main(String[] args) {
+		Calculator a = new Calculator();
+		System.out.println(a.add(244, 5));
+		System.out.println(a.add(122, 30, 23));
+		System.out.println(a.add(26.4, 22.4));
+
+	}
+
+}
+
+output:
+249
+175
+48.8
