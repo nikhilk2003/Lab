@@ -1,0 +1,57 @@
+package labAssessment;
+enum BankName
+{
+	//constructor for enum class.
+	ICIC(6.3),HDFC(5.8), SBI (6.0);
+	double interestRate;
+	BankName(double interestRate)
+	{
+		this.interestRate = interestRate;
+	}
+}
+
+public class TotalInterest {
+	//constructor for main class
+	String accountHolderName;
+	BankName bankName;
+	double accountBalance;
+	public TotalInterest(double accountBalance, String accountHolderName, BankName bankName)
+	{
+		this.accountHolderName = accountHolderName;
+		this.bankName = bankName;
+		this.accountBalance = accountBalance;
+	}
+	double calculateInterest(int numberOfYear)//method for calculating interest
+	{
+		double totalInterest = bankName.interestRate*numberOfYear*accountBalance;
+		return totalInterest;
+	}
+	
+	public static void main(String[] args) {
+		TotalInterest b1 = new TotalInterest(12000,"Nikhil",BankName.SBI);
+		System.out.println(b1.accountHolderName+" has an account in" +b1.bankName); //printing bank name
+		System.out.println("The total interest for"+ b1.accountHolderName+"for 3 years is: "+ b1.calculateInterest(3));
+		//printing total interest
+		System.out.println("");
+		
+		TotalInterest b2 = new TotalInterest(3000,"Sumithra",BankName.HDFC);
+		System.out.println(b2.accountHolderName+ " has an account in"+ b2.bankName);
+		System.out.println("The total interest for"+ b2.accountHolderName+"for 3 year is:"+b2.calculateInterest(3));
+		System.out.println(" ");
+		
+		TotalInterest b3 = new TotalInterest(30000,"Kantharaju",BankName.SBI);
+		System.out.println(b3.accountHolderName+" has an account in"+b3.bankName);
+		System.out.println("The total interst for"+b3.accountHolderName+"for 3 years is:"+b3.calculateInterest(3));
+	}
+
+}
+
+output
+Nikhil has an account inSBI
+The total interest forNikhilfor 3 years is: 216000.0
+
+Sumithra has an account inHDFC
+The total interest forSumithrafor 3 year is:52199.99999999999
+ 
+Kantharaju has an account inSBI
+The total interst forKantharajufor 3 years is:540000.0
